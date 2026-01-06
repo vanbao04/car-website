@@ -1,1 +1,16 @@
+body {
+  font-family: Arial;
+  padding: 20px;
+}
+
+.car-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.car-item img {
+  width: 100%;
+}
 
