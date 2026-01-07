@@ -26,8 +26,13 @@ cars.forEach(car => {
     <h3>${car.name}</h3>
     <p>Hãng: ${car.brand}</p>
     <p>Giá: ${car.price.toLocaleString()} VNĐ</p>
+    <button onclick="viewDetail(${car.id})">Xem chi tiết</button>
   `;
 
   carList.appendChild(div);
 });
+
+function viewDetail(id) {
+  window.location.href = `detail.html?id=${id}`;
+}
 
