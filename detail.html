@@ -1,21 +1,21 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <title>Chi tiết xe</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+const cars = [
+  { id: 1, name: "Toyota Camry 2023", brand: "Toyota", price: 1200000000, image: "images/camry.jpg" },
+  { id: 2, name: "BMW X5", brand: "BMW", price: 3500000000, image: "images/bmw.jpg" }
+];
 
-<header>
-  <h2>AutoCar</h2>
-  <nav>
-    <a href="index.html">Trang chủ</a>
-  </nav>
-</header>
+const params = new URLSearchParams(window.location.search);
+const id = Number(params.get("id"));
 
-<div id="car-detail"></div>
+const car = cars.find(c => c.id === id);
 
-<script src="js/detail.js"></script>
-</body>
-</html>
+if (car) {
+  document.getElementById("car-image").src = car.image;
+  document.getElementById("car-name").innerText = car.name;
+  document.getElementById("car-brand").innerText = "Hãng: " + car.brand;
+  document.getElementById("car-price").innerText =
+    "Giá: " + car.price.toLocaleString() + " VND";
+}
+
+function goBack() {
+  window.history.back();
+}
