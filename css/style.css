@@ -91,3 +91,12 @@ body {
 .dark .car-item {
   background: #1e1e1e;
 }
+
+.footer {
+  background: #0d6efd;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
