@@ -1,38 +1,26 @@
-const cars = [
-  {
-    id: 1,
-    name: "Toyota Camry 2023",
-    price: 1200000000,
-    brand: "Toyota",
-    image: "./images/camry.jpg",
-    description: "Sedan hạng D, tiết kiệm nhiên liệu, phù hợp gia đình."
-  },
-  {
-    id: 2,
-    name: "BMW X5",
-    price: 3500000000,
-    brand: "BMW",
-    image: "./images/bmw.jpg",
-    description: "SUV hạng sang, động cơ mạnh mẽ, nội thất cao cấp."
-  }
-];
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi tiết xe</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-const params = new URLSearchParams(window.location.search);
-const id = Number(params.get("id"));
+<header class="navbar">
+  <h1>Chi tiết xe</h1>
+</header>
 
-const car = cars.find(c => c.id === id);
-const container = document.getElementById("car-detail");
+<div class="detail-container">
+  <img id="car-image">
+  <div class="detail-info">
+    <h2 id="car-name"></h2>
+    <p id="car-brand"></p>
+    <p id="car-price"></p>
+    <button onclick="goBack()">← Quay lại</button>
+  </div>
+</div>
 
-if (car) {
-  container.innerHTML = `
-    <div class="car-item">
-      <img src="${car.image}">
-      <h2>${car.name}</h2>
-      <p>Hãng: ${car.brand}</p>
-      <p>Giá: ${car.price.toLocaleString()} VNĐ</p>
-      <p>${car.description}</p>
-    </div>
-  `;
-} else {
-  container.innerHTML = "<p>Không tìm thấy xe</p>";
-}
+<script src="js/detail.js"></script>
+</body>
+</html>
