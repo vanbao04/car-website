@@ -1,15 +1,78 @@
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
+* {
+  box-sizing: border-box;
 }
 
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* HEADER */
+header {
+  background-color: #0d6efd;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* CONTAINER */
+#car-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+/* CARD XE */
 .car-item {
-  border: 1px solid #ccc;
-  padding: 10px;
-  width: 250px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.car-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .car-item img {
   width: 100%;
-  height: auto;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* NỘI DUNG */
+.car-item h3 {
+  margin: 15px;
+  font-size: 18px;
+}
+
+.car-item p {
+  margin: 0 15px 10px;
+  font-size: 14px;
+}
+
+/* BUTTON */
+.car-item button {
+  margin: 15px;
+  padding: 10px;
+  width: calc(100% - 30px);
+  border: none;
+  border-radius: 8px;
+  background-color: #0d6efd;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.car-item button:hover {
+  background-color: #084298;
 }
