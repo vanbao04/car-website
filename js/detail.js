@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <title>Chi tiết xe</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+const cars = [
+  { id: 1, name: "Toyota Camry 2023", brand: "Toyota", price: 1200000000, image: "images/camry.jpg" },
+  { id: 2, name: "BMW X5", brand: "BMW", price: 3500000000, image: "images/bmw.jpg" }
+];
 
-<header class="navbar">
-  <h1>Chi tiết xe</h1>
-</header>
+const params = new URLSearchParams(window.location.search);
+const id = Number(params.get("id"));
+const car = cars.find(c => c.id === id);
 
-<div class="detail-container">
-  <img id="car-image">
-  <div class="detail-info">
-    <h2 id="car-name"></h2>
-    <p id="car-brand"></p>
-    <p id="car-price"></p>
-    <button onclick="goBack()">← Quay lại</button>
-  </div>
-</div>
+if (car) {
+  document.getElementById("car-image").src = car.image;
+  document.getElementById("car-name").innerText = car.name;
+  document.getElementById("car-brand").innerText = "Hãng: " + car.brand;
+  document.getElementById("car-price").innerText =
+    "Giá: " + car.price.toLocaleString() + " VND";
+}
 
-<script src="js/detail.js"></script>
-</body>
-</html>
+function goBack() {
+  window.history.back();
+}
