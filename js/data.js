@@ -43,9 +43,9 @@ const cars = [
   }
 ];
 
-
 const carList = document.getElementById("car-list");
 const searchInput = document.getElementById("search");
+const typeFilter = document.getElementById("typeFilter");
 
 function renderCars(list) {
   carList.innerHTML = "";
@@ -69,8 +69,10 @@ function renderCars(list) {
   });
 }
 
-
 renderCars(cars);
+
+typeFilter.addEventListener("change", filterCars);
+searchInput.addEventListener("input", filterCars);
 
 searchInput.addEventListener("input", () => {
   const keyword = searchInput.value.toLowerCase();
@@ -90,4 +92,17 @@ function toggleDarkMode() {
 
 function formatPrice(price) {
   return price.toLocaleString("vi-VN") + " VND";
+}
+
+function filterCars() {
+  const keyword = searchInput.value.toLowerCase();
+  const type = typeFilter.value;
+
+  const filtered = cars.filter(car => {
+    const matchName = car.name.toLowerCase().includes(keyword);
+    const matchType = type === "" || car.type === type;
+    return matchName && matchType;
+  });
+
+  renderCars(filtered);
 }
