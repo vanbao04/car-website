@@ -8,6 +8,17 @@ body {
   background: #f4f6f8;
 }
 
+.tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -44,6 +55,7 @@ body {
 }
 
 .car-item {
+  position: relative;
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
