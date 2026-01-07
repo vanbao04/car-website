@@ -1,3 +1,5 @@
+alert("JS đã chạy");
+
 const cars = [
   {
     id: 1,
