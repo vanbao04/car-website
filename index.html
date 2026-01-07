@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Chi tiết xe</title>
+  <title>Car Shop</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,20 +13,16 @@
     <a href="#">Trang chủ</a>
     <a href="#">Xe mới</a>
     <a href="#">Liên hệ</a>
+    <button onclick="toggleDarkMode()">🌙</button>
   </nav>
 </header>
 
-
-<div class="detail-container">
-  <img id="car-image">
-  <div class="detail-info">
-    <h2 id="car-name"></h2>
-    <p id="car-brand"></p>
-    <p id="car-price"></p>
-    <button onclick="goBack()">← Quay lại</button>
-  </div>
+<div class="filter">
+  <input type="text" id="search" placeholder="Tìm theo tên xe...">
 </div>
 
-<script src="js/detail.js"></script>
+<div id="car-list"></div>
+
+<script src="js/data.js"></script>
 </body>
 </html>
