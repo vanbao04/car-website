@@ -1,19 +1,48 @@
 const cars = [
   {
     id: 1,
-    name: "Toyota Camry 2023",
-    brand: "Toyota",
-    price: 1200000000,
-    image: "images/camry.jpg"
+    name: "Lamborghini Aventador SVJ",
+    brand: "Lamborghini",
+    type: "Supercar",
+    price: 13500000000,
+    image: "images/lamborghini.jpg",
   },
   {
     id: 2,
-    name: "BMW X5",
-    brand: "BMW",
-    price: 3500000000,
-    image: "images/bmw.jpg"
+    name: "Ferrari LaFerrari",
+    brand: "Ferrari",
+    type: "Hypercar",
+    price: 32000000000,
+    image: "images/ferrari1.jpg"
+  },
+  {
+    id: 3,
+    name: "Bugatti Chiron",
+    brand: "Bugatti",
+    type: "Megacar",
+    price: 130000000000,
+    image: "images/bugatti.jpg",
+    tag: "HOT"
+  },
+  {
+    id: 4,
+    name: "Koenigsegg One:1",
+    brand: "Koenigsegg",
+    type: "Megacar",
+    price: 78000000000,
+    image: "images/koenigsegg.jpg"
+    tag: "HOT"
+  },
+  {
+    id: 5,
+    name: "KIA Morning",
+    brand: "KIA",
+    type: "Hatchback",
+    price: 380000000,
+    image: "images/morning.jpg"
   }
 ];
+
 
 const carList = document.getElementById("car-list");
 const searchInput = document.getElementById("search");
