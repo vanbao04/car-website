@@ -54,7 +54,9 @@ function renderCars(list) {
     carList.innerHTML = "<p>❌ Không tìm thấy xe phù hợp</p>";
     return;
   }
-
+  if (typeFilter) {
+    typeFilter.addEventListener("change", filterCars);
+  }
   list.forEach(car => {
     const div = document.createElement("div");
     div.className = "car-item";
