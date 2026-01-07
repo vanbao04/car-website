@@ -20,6 +20,12 @@ const searchInput = document.getElementById("search");
 
 function renderCars(list) {
   carList.innerHTML = "";
+
+  if (list.length === 0) {
+    carList.innerHTML = "<p>❌ Không tìm thấy xe phù hợp</p>";
+    return;
+  }
+
   list.forEach(car => {
     const div = document.createElement("div");
     div.className = "car-item";
@@ -27,12 +33,13 @@ function renderCars(list) {
       <img src="${car.image}">
       <h3>${car.name}</h3>
       <p>Hãng: ${car.brand}</p>
-      <p>Giá: ${car.price.toLocaleString()} VND</p>
+      <p>Giá: ${formatPrice(car.price)}</p>
       <button onclick="viewDetail(${car.id})">Xem chi tiết</button>
     `;
     carList.appendChild(div);
   });
 }
+
 
 renderCars(cars);
 
@@ -50,4 +57,8 @@ function viewDetail(id) {
 
 function toggleDarkMode() {
   document.body.classList.toggle("dark");
+}
+
+function formatPrice(price) {
+  return price.toLocaleString("vi-VN") + " VND";
 }
