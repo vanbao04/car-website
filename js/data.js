@@ -59,8 +59,8 @@ function renderCars(list) {
     const div = document.createElement("div");
     div.className = "car-item";
     div.innerHTML = `
+      <div class="tag">${car.tag || ""}</div>
       <img src="${car.image}">
-      <h3>${car.name}</h3>
       <p>Hãng: ${car.brand}</p>
       <p>Giá: ${formatPrice(car.price)}</p>
       <button onclick="viewDetail(${car.id})">Xem chi tiết</button>
