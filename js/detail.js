@@ -3,21 +3,16 @@ const id = Number(params.get("id"));
 
 const car = cars.find(c => c.id === id);
 
-const container = document.getElementById("car-detail");
-
 if (!car) {
-  container.innerHTML = "<p>Không tìm thấy xe</p>";
-} else {
-  container.innerHTML = `
-    <img src="${car.image}" alt="${car.name}" style="max-width:400px">
+  document.body.innerHTML = "<h2>Xe không tồn tại</h2>";
+}
 
-    ${car.tag ? `<span class="tag ${car.tag.toLowerCase()}">${car.tag}</span>` : ""}
+document.getElementById("car-image").src = car.image;
+document.getElementById("car-name").innerText = car.name;
+document.getElementById("car-brand").innerText = "Hãng: " + car.brand;
+document.getElementById("car-price").innerText =
+  "Giá: " + car.price.toLocaleString() + " VND";
 
-    <h2>${car.name}</h2>
-    <p>Hãng: ${car.brand}</p>
-    <p>Loại: ${car.type || "Đang cập nhật"}</p>
-    <p>Giá: ${car.price.toLocaleString()} VND</p>
-
-    <button onclick="history.back()">⬅ Quay lại</button>
-  `;
+if (car.tag) {
+  document.getElementById("car-tag").innerText = car.tag;
 }
