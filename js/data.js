@@ -50,50 +50,21 @@ const typeFilter = document.getElementById("typeFilter");
 function renderCars(list) {
   carList.innerHTML = "";
 
-  if (list.length === 0) {
-    carList.innerHTML = "<p>❌ Không tìm thấy xe phù hợp</p>";
-    return;
-  }
-  if (typeFilter) {
-    typeFilter.addEventListener("change", filterCars);
-  }
   list.forEach(car => {
     const div = document.createElement("div");
     div.className = "car-item";
+
     div.innerHTML = `
-      <div class="tag">${car.tag || ""}</div>
-      <img src="${car.image}">
+      <img src="${car.image}" alt="${car.name}">
+      <h3>${car.name}</h3>
       <p>Hãng: ${car.brand}</p>
-      <p>Giá: ${formatPrice(car.price)}</p>
+      <p>Loại: ${car.type}</p>
+      <p>Giá: ${car.price.toLocaleString()} VNĐ</p>
       <button onclick="viewDetail(${car.id})">Xem chi tiết</button>
     `;
+
     carList.appendChild(div);
   });
-}
-
-renderCars(cars);
-
-typeFilter.addEventListener("change", filterCars);
-searchInput.addEventListener("input", filterCars);
-
-searchInput.addEventListener("input", () => {
-  const keyword = searchInput.value.toLowerCase();
-  const filtered = cars.filter(car =>
-    car.name.toLowerCase().includes(keyword)
-  );
-  renderCars(filtered);
-});
-
-function viewDetail(id) {
-  window.location.href = `detail.html?id=${id}`;
-}
-
-function toggleDarkMode() {
-  document.body.classList.toggle("dark");
-}
-
-function formatPrice(price) {
-  return price.toLocaleString("vi-VN") + " VND";
 }
 
 function filterCars() {
@@ -108,3 +79,12 @@ function filterCars() {
 
   renderCars(filtered);
 }
+
+searchInput.addEventListener("input", filterCars);
+typeFilter.addEventListener("change", filterCars);
+
+function viewDetail(id) {
+  window.location.href = `detail.html?id=${id}`;
+}
+
+renderCars(cars);
