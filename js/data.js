@@ -45,29 +45,33 @@ const cars = [
   }
 ];
 
-const carList = document.getElementById("car-list");
 const searchInput = document.getElementById("search");
 const typeFilter = document.getElementById("typeFilter");
+const container = document.getElementById("car-list");
 
 function renderCars(list) {
-  carList.innerHTML = "";
+  container.innerHTML = "";
 
   list.forEach(car => {
     const div = document.createElement("div");
-    div.className = "car-item";
+    div.className = "car-card";
 
     div.innerHTML = `
       <img src="${car.image}" alt="${car.name}">
       <h3>${car.name}</h3>
       <p>Hãng: ${car.brand}</p>
-      <p>Loại: ${car.type}</p>
-      <p>Giá: ${car.price.toLocaleString()} VNĐ</p>
-      <button onclick="viewDetail(${car.id})">Xem chi tiết</button>
+      <p>Giá: ${car.price.toLocaleString()} VND</p>
+
+      <button onclick="viewDetail(${car.id})">
+        Xem chi tiết
+      </button>
     `;
 
-    carList.appendChild(div);
+    container.appendChild(div);
   });
 }
+
+renderCars(cars);
 
 function filterCars() {
   const keyword = searchInput.value.toLowerCase();
