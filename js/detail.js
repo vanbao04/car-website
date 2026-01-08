@@ -16,3 +16,7 @@ document.getElementById("car-price").innerText =
 if (car.tag) {
   document.getElementById("car-tag").innerText = car.tag;
 }
+
+function goBack() {
+  window.history.back();
+}
