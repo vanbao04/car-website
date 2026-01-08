@@ -19,6 +19,14 @@ body {
   font-size: 12px;
 }
 
+.tag.new {
+  background-color: green;
+}
+
+.tag.hot {
+  background-color: red;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
