@@ -48,33 +48,28 @@ const searchInput = document.getElementById("search");
 const typeFilter = document.getElementById("typeFilter");
 const container = document.getElementById("car-list");
 
-function viewDetail(id) {
-  window.location.href = `detail.html?id=${id}`;
-}
-
+/* Render danh sách xe */
 function renderCars(list) {
   container.innerHTML = "";
 
   list.forEach(car => {
-    const div = document.createElement("div");
-    div.className = "car-card";
-    div.onclick = () => viewDetail(car.id);
+    const card = document.createElement("div");
+    card.className = "car-card";
+    card.onclick = () => viewDetail(car.id);
 
-    div.innerHTML = `
-      <div class="tag-box">
-        ${car.tag ? `<span class="tag ${car.tag.toLowerCase()}">${car.tag}</span>` : ""}
-      </div>
-
+    card.innerHTML = `
+      ${car.tag ? `<span class="tag ${car.tag.toLowerCase()}">${car.tag}</span>` : ""}
       <img src="${car.image}" alt="${car.name}">
       <h3>${car.name}</h3>
       <p>Hãng: ${car.brand}</p>
       <p class="price">${car.price.toLocaleString()} VND</p>
     `;
 
-    container.appendChild(div);
+    container.appendChild(card);
   });
 }
 
+/* Search + Filter */
 function filterCars() {
   const keyword = searchInput.value.toLowerCase();
   const type = typeFilter.value;
@@ -91,4 +86,15 @@ function filterCars() {
 searchInput.addEventListener("input", filterCars);
 typeFilter.addEventListener("change", filterCars);
 
+/* Xem chi tiết */
+function viewDetail(id) {
+  window.location.href = `detail.html?id=${id}`;
+}
+
+/* Dark mode */
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
+}
+
+/* Load ban đầu */
 renderCars(cars);
