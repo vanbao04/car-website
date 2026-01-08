@@ -178,3 +178,14 @@ body.dark .detail-card {
 body.dark .navbar {
   background: black;
 }
+
+/* THONG SO */
+.specs {
+  list-style: none;
+  padding: 0;
+}
+
+.specs li {
+  padding: 6px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
