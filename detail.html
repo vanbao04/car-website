@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Chi tiết xe</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
 <header class="navbar">
-  <h1> Showroom Xe Cao Cấp</h1>
+  <h1> Car Shop</h1>
 </header>
 
 <main class="detail-container">
   <div class="detail-card">
 
-    <!-- Ảnh xe -->
     <div class="detail-image">
       <span id="car-tag" class="tag"></span>
       <img id="car-image" src="" alt="Xe hơi">
     </div>
 
-    <!-- Thông tin xe -->
     <div class="detail-info">
       <h2 id="car-name"></h2>
       <p id="car-brand"></p>
+      <p id="car-type"></p>
       <p id="car-price" class="price"></p>
 
-      <div class="actions">
-        <button class="btn primary">
-          📞 Liên hệ mua
-        </button>
+      <h3>📊 Thông số kỹ thuật</h3>
+      <ul class="specs">
+        <li><strong>Động cơ:</strong> <span id="engine"></span></li>
+        <li><strong>Công suất:</strong> <span id="power"></span></li>
+        <li><strong>Tăng tốc:</strong> <span id="acceleration"></span></li>
+        <li><strong>Tốc độ tối đa:</strong> <span id="topSpeed"></span></li>
+        <li><strong>Dẫn động:</strong> <span id="drivetrain"></span></li>
+        <li><strong>Năm sản xuất:</strong> <span id="year"></span></li>
+        <li><strong>Xuất xứ:</strong> <span id="origin"></span></li>
+      </ul>
 
-        <button class="btn outline" onclick="goBack()">
-          ← Quay lại
-        </button>
+      <h3>📝 Mô tả</h3>
+      <p id="description"></p>
+
+      <div class="actions">
+        <button class="btn primary">📞 Liên hệ mua</button>
+        <button class="btn outline" onclick="goBack()">← Quay lại</button>
       </div>
     </div>
 
   </div>
 </main>
 
-<footer class="footer">
-  <p>© 2026 Car Shop</p>
-</footer>
-
+<script src="js/data.js"></script>
 <script src="js/detail.js"></script>
+
 </body>
 </html>
