@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Chi tiết xe</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<header class="navbar">
-  <h1>Chi tiết xe</h1>
+<header class="header">
+  <h1>🚗 Showroom Xe Cao Cấp</h1>
 </header>
 
-<div class="detail-container">
-  <img id="car-image">
-  <div class="detail-info">
-    <h2 id="car-name"></h2>
-    <p id="car-brand"></p>
-    <p id="car-price"></p>
-    <button onclick="goBack()">← Quay lại</button>
+<main class="detail-container">
+  <div class="detail-card">
+
+    <div class="detail-image">
+      <span id="car-tag" class="tag"></span>
+      <img id="car-image" src="" alt="Xe hơi">
+    </div>
+
+    <div class="detail-info">
+      <h2 id="car-name"></h2>
+      <p id="car-brand"></p>
+      <p id="car-price" class="price"></p>
+
+      <div class="actions">
+        <button class="btn primary">📞 Liên hệ mua</button>
+        <button class="btn outline" onclick="goBack()">← Quay lại</button>
+      </div>
+    </div>
+
   </div>
-</div>
-  
-<span id="car-tag" class="tag"></span>
+</main>
 
-<script src="js/data.js"></script>
 <script src="js/detail.js"></script>
-
 </body>
 </html>
