@@ -6,6 +6,7 @@ const cars = [
     type: "Supercar",
     price: 13500000000,
     image: "images/lamborghini.jpg",
+    tag: "HOT"
   },
   {
     id: 2,
@@ -22,7 +23,7 @@ const cars = [
     type: "Megacar",
     price: 130000000000,
     image: "images/bugatti.jpg",
-    tag: "HOT"
+    tag: "NEW"
   },
   {
     id: 4,
@@ -30,8 +31,9 @@ const cars = [
     brand: "Koenigsegg",
     type: "Megacar",
     price: 78000000000,
-    image: "images/koenigsegg.jpg"
+    image: "images/koenigsegg.jpg",
     tag: "HOT"
+    
   },
   {
     id: 5,
