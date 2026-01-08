@@ -33,7 +33,6 @@ const cars = [
     price: 78000000000,
     image: "images/koenigsegg.jpg",
     tag: "HOT"
-    
   },
   {
     id: 5,
@@ -76,8 +75,6 @@ function renderCars(list) {
   });
 }
 
-renderCars(cars);
-
 function filterCars() {
   const keyword = searchInput.value.toLowerCase();
   const type = typeFilter.value;
@@ -93,9 +90,5 @@ function filterCars() {
 
 searchInput.addEventListener("input", filterCars);
 typeFilter.addEventListener("change", filterCars);
-
-function viewDetail(id) {
-  window.location.href = `detail.html?id=${id}`;
-}
 
 renderCars(cars);
