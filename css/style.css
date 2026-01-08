@@ -8,24 +8,23 @@ body {
   background: #f4f6f8;
 }
 
-.tag {
+.tag-box {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: red;
-  color: white;
+}
+
+.tag {
   padding: 4px 8px;
-  border-radius: 5px;
   font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 6px;
 }
 
-.tag.new {
-  background-color: green;
-}
-
-.tag.hot {
-  background-color: red;
-}
+.tag.new { background: #2ecc71; }
+.tag.hot { background: #e74c3c; }
+.tag.sale { background: #f39c12; }
 
 .navbar {
   display: flex;
@@ -107,6 +106,36 @@ body {
 
 .car-item button:hover {
   opacity: 0.9;
+}
+
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.car-card {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.car-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.price {
+  font-weight: bold;
+  color: #e74c3c;
 }
 
 /* DETAIL */
