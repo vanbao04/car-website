@@ -8,7 +8,7 @@
 <body>
 
 <header class="navbar">
-  <h1>Car Shop</h1>
+  <h1> Car Shop</h1>
   <nav>
     <a href="#">Trang chủ</a>
     <a href="#">Xe mới</a>
@@ -17,8 +17,12 @@
   </nav>
 </header>
 
-<div class="filter">
-  <input type="text" id="search" placeholder="Tìm theo tên xe...">
+<section class="filter">
+  <input
+    type="text"
+    id="search"
+    placeholder="Tìm theo tên xe..."
+  >
 
   <select id="typeFilter">
     <option value="">Tất cả loại xe</option>
@@ -27,15 +31,16 @@
     <option value="Megacar">Megacar</option>
     <option value="Hatchback">Hatchback</option>
   </select>
-</div>
+</section>
 
-<div id="car-list" class="car-grid"></div>
-
-<script src="js/data.js"></script>
+<main>
+  <div id="car-list" class="car-grid"></div>
+</main>
 
 <footer class="footer">
   <p>© 2026 Car Shop | Intern Project by Bao Han Van</p>
 </footer>
 
+<script src="js/data.js"></script>
 </body>
 </html>
