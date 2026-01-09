@@ -78,9 +78,8 @@ const cars = [
 
 const container = document.getElementById("car-list");
 if (!container) {
-  console.warn("Không phải index page → stop data.js");
-  throw new Error("Stop data.js");
-}
+  console.log("data.js: không phải index page → bỏ qua render");
+} else {
 
 const searchInput = document.getElementById("search");
 const typeFilter = document.getElementById("typeFilter");
@@ -132,3 +131,4 @@ typeFilter.addEventListener("change", filterCars);
    LOAD BAN ĐẦU
 ====================== */
 renderCars(cars);
+}
