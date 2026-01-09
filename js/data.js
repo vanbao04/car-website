@@ -131,8 +131,10 @@ function filterCars() {
   renderCars(filtered);
 }
 
-searchInput.addEventListener("input", filterCars);
-typeFilter.addEventListener("change", filterCars);
+if (searchInput && typeFilter) {
+  searchInput.addEventListener("input", filterCars);
+  typeFilter.addEventListener("change", filterCars);
+}
 
 /* Xem chi tiết */
 function viewDetail(id) {
