@@ -76,41 +76,59 @@ const cars = [
   }
 ];
 
-const list = document.getElementById("car-list");
+const container = document.getElementById("car-list");
+if (!container) {
+  console.warn("Không phải index page → stop data.js");
+  throw new Error("Stop data.js");
+}
 
-function renderCars(data) {
-  if (!list) return;
+const searchInput = document.getElementById("search");
+const typeFilter = document.getElementById("typeFilter");
 
-  list.innerHTML = "";
-  data.forEach(car => {
+/* ======================
+   RENDER XE
+====================== */
+function renderCars(list) {
+  container.innerHTML = "";
+
+  list.forEach(car => {
     const div = document.createElement("div");
     div.className = "car-card";
-    div.innerHTML = `
-      <img src="${car.image}">
-      <h3>${car.name}</h3>
-      <p>${car.brand} • ${car.year}</p>
-      <p class="price">${car.price.toLocaleString()} VND</p>
-    `;
     div.onclick = () => {
       window.location.href = `detail.html?id=${car.id}`;
     };
-    list.appendChild(div);
+
+    div.innerHTML = `
+      ${car.tag ? `<span class="tag ${car.tag.toLowerCase()}">${car.tag}</span>` : ""}
+      <img src="${car.image}" alt="${car.name}">
+      <h3>${car.name}</h3>
+      <p>Hãng: ${car.brand}</p>
+      <p class="price">${car.price.toLocaleString()} VND</p>
+    `;
+
+    container.appendChild(div);
   });
 }
 
-renderCars(cars);
+/* ======================
+   SEARCH + FILTER
+====================== */
+function filterCars() {
+  const keyword = searchInput.value.toLowerCase();
+  const type = typeFilter.value;
 
-/* FILTER */
-document.addEventListener("input", () => {
-  const name = document.getElementById("searchName").value.toLowerCase();
-  const brand = document.getElementById("filterBrand").value;
-  const year = document.getElementById("filterYear").value;
-
-  const filtered = cars.filter(c =>
-    c.name.toLowerCase().includes(name) &&
-    (brand === "" || c.brand === brand) &&
-    (year === "" || c.year == year)
+  const filtered = cars.filter(car =>
+    car.name.toLowerCase().includes(keyword) &&
+    (type === "" || car.type === type)
   );
 
   renderCars(filtered);
-});
+}
+
+searchInput.addEventListener("input", filterCars);
+typeFilter.addEventListener("change", filterCars);
+
+/* ======================
+   LOAD BAN ĐẦU
+====================== */
+renderCars(cars);
