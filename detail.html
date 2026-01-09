@@ -1,63 +1,38 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Chi tiết xe</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header class="navbar">
-  <h1> Car Shop</h1>
+  <h1>Thông tin chi tiết xe</h1>
+  <button onclick="goBack()">← Quay lại</button>
 </header>
 
 <main class="detail-container">
-  <div class="detail-card">
+  <img id="car-image" class="detail-image">
 
-    <div class="detail-image">
-      <span id="car-tag" class="tag"></span>
-      <img id="car-image" src="" alt="Xe hơi">
-    </div>
+  <h2 id="car-name"></h2>
+  <p id="car-price" class="price"></p>
 
-    <div class="detail-info">
-      <h2 id="car-name"></h2>
-      <p id="car-brand"></p>
-      <p id="car-price" class="price"></p>
+  <table class="specs">
+    <tr><td>Hãng</td><td id="brand"></td></tr>
+    <tr><td>Năm</td><td id="year"></td></tr>
+    <tr><td>Động cơ</td><td id="engine"></td></tr>
+    <tr><td>Công suất</td><td id="power"></td></tr>
+    <tr><td>Tăng tốc</td><td id="acceleration"></td></tr>
+    <tr><td>Tốc độ tối đa</td><td id="topSpeed"></td></tr>
+    <tr><td>Dẫn động</td><td id="drivetrain"></td></tr>
+    <tr><td>Xuất xứ</td><td id="origin"></td></tr>
+  </table>
 
-      <!-- TAB -->
-      <div class="tabs">
-        <button class="tab-btn active" onclick="showTab('specs')">Thông số</button>
-        <button class="tab-btn" onclick="showTab('desc')">Mô tả</button>
-      </div>
-
-      <!-- TAB CONTENT -->
-      <div id="specs" class="tab-content active">
-        <table class="spec-table">
-          <tr><td>Động cơ</td><td id="spec-engine"></td></tr>
-          <tr><td>Công suất</td><td id="spec-power"></td></tr>
-          <tr><td>Tăng tốc</td><td id="spec-acc"></td></tr>
-          <tr><td>Tốc độ tối đa</td><td id="spec-speed"></td></tr>
-          <tr><td>Dẫn động</td><td id="spec-drive"></td></tr>
-          <tr><td>Năm sản xuất</td><td id="spec-year"></td></tr>
-          <tr><td>Xuất xứ</td><td id="spec-origin"></td></tr>
-        </table>
-      </div>
-
-      <div id="desc" class="tab-content">
-        <p id="car-description"></p>
-      </div>
-
-      <div class="actions">
-        <button class="btn primary">📞 Liên hệ mua</button>
-        <button class="btn outline" onclick="goBack()">← Quay lại</button>
-      </div>
-    </div>
-
-  </div>
+  <p id="description" class="description"></p>
 </main>
 
 <script src="js/data.js"></script>
 <script src="js/detail.js"></script>
-
 </body>
 </html>
