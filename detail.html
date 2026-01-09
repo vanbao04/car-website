@@ -8,29 +8,42 @@
 <body>
 
 <header class="navbar">
-  <a href="index.html">← Quay lại</a>
+  <h1>Chi tiết xe</h1>
+  <nav>
+    <a href="index.html">← Quay về</a>
+  </nav>
 </header>
 
-<main class="detail">
-  <img id="car-image">
-  <h1 id="car-name"></h1>
-  <p id="car-brand"></p>
-  <p id="car-price"></p>
+<main class="detail-container">
 
-  <h2>Thông số kỹ thuật</h2>
-  <ul>
-    <li>Động cơ: <span id="engine"></span></li>
-    <li>Công suất: <span id="power"></span></li>
-    <li>0–100 km/h: <span id="acceleration"></span></li>
-    <li>Tốc độ tối đa: <span id="topSpeed"></span></li>
-    <li>Dẫn động: <span id="drivetrain"></span></li>
-    <li>Năm SX: <span id="year"></span></li>
-    <li>Xuất xứ: <span id="origin"></span></li>
-  </ul>
+  <div class="detail-image">
+    <img id="car-image" src="" alt="">
+  </div>
 
-  <p id="description"></p>
+  <div class="detail-info">
+    <h2 id="car-name"></h2>
+    <p id="car-brand"></p>
+    <p id="car-year"></p>
+    <p class="price" id="car-price"></p>
+
+    <h3>Thông số kỹ thuật</h3>
+    <ul class="specs">
+      <li>Động cơ: <span id="engine"></span></li>
+      <li>Công suất: <span id="power"></span></li>
+      <li>0–100 km/h: <span id="acceleration"></span></li>
+      <li>Tốc độ tối đa: <span id="topSpeed"></span></li>
+      <li>Dẫn động: <span id="drivetrain"></span></li>
+      <li>Xuất xứ: <span id="origin"></span></li>
+    </ul>
+
+    <h3>Mô tả</h3>
+    <p id="description"></p>
+
+    <button class="btn-buy" onclick="orderCar()">🛒 Đặt mua xe</button>
+  </div>
+
 </main>
-
+  
 <script src="js/cars.js"></script>
 <script src="js/detail.js"></script>
 </body>
