@@ -8,134 +8,174 @@
 
 /* BODY */
 body {
-  background: #f9fafb;
-  color: #111827;
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #f8fafc;
 }
 
 /* NAVBAR */
 .navbar {
-  background: #111827;
-  color: white;
-  padding: 15px 30px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 16px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.navbar a {
-  color: white;
-  margin-right: 15px;
+.navbar h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #facc15;
+}
+
+.navbar nav a {
+  color: #e5e7eb;
+  margin-right: 20px;
   text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar nav a:hover {
+  color: #facc15;
 }
 
 .navbar button {
-  background: none;
-  border: none;
+  background: #1f2933;
   color: white;
-  font-size: 18px;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
 /* FILTER */
 .filter {
+  margin: 30px auto;
+  max-width: 900px;
   display: flex;
-  gap: 10px;
-  padding: 20px;
+  gap: 15px;
   justify-content: center;
 }
 
 .filter input,
 .filter select {
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: 1px solid #d1d5db;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  width: 220px;
+  background: #020617;
+  color: #e5e7eb;
+  border: 1px solid #334155;
 }
 
 /* GRID */
 .car-grid {
+  max-width: 1200px;
+  margin: 40px auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 30px;
 }
 
 /* CARD */
 .car-card {
-  background: white;
-  border-radius: 12px;
-  padding: 15px;
-  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 16px;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
 }
 
 .car-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 .car-card img {
   width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 .car-card h3 {
-  margin-bottom: 5px;
+  margin: 12px 0 4px;
+  color: #facc15;
 }
 
-.price {
-  color: #dc2626;
+.car-card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #cbd5f5;
+}
+
+.car-card .price {
   font-weight: bold;
+  color: #22c55e;
 }
 
 /* TAG */
-.tag {
+.tag-box {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  color: white;
-  font-size: 12px;
+  top: 12px;
+  left: 12px;
 }
 
-.tag.hot { background: #dc2626; }
-.tag.new { background: #16a34a; }
+.tag {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.tag.hot {
+  background: #dc2626;
+}
+
+.tag.new {
+  background: #16a34a;
+}
 
 /* DETAIL */
 .detail-container {
   display: flex;
   justify-content: center;
-  padding: 40px;
+  padding: 50px 20px;
 }
 
 .detail-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  max-width: 1000px;
+  width: 100%;
   display: flex;
-  gap: 30px;
-  background: white;
-  border-radius: 16px;
+  gap: 40px;
   padding: 30px;
-  max-width: 900px;
 }
 
 .detail-image img {
   width: 400px;
-  border-radius: 12px;
-}
-
-.detail-info {
-  max-width: 400px;
+  border-radius: 16px;
 }
 
 .detail-info h2 {
-  margin-bottom: 10px;
+  color: #facc15;
 }
 
-.actions {
-  margin-top: 20px;
-  display: flex;
-  gap: 10px;
+.price {
+  color: #22c55e;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 /* BUTTON */
@@ -161,7 +201,8 @@ body {
 .footer {
   text-align: center;
   padding: 20px;
-  color: #6b7280;
+  color: #94a3b8;
+  border-top: 1px solid #1e293b;
 }
 
 /* DARK MODE */
