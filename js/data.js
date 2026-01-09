@@ -77,9 +77,7 @@ const cars = [
 ];
 
 const container = document.getElementById("car-list");
-if (!container) {
-  console.log("data.js: không phải index page → bỏ qua render");
-} else {
+if (!container) return;
 
 const searchInput = document.getElementById("search");
 const typeFilter = document.getElementById("typeFilter");
@@ -131,4 +129,3 @@ typeFilter.addEventListener("change", filterCars);
    LOAD BAN ĐẦU
 ====================== */
 renderCars(cars);
-}
