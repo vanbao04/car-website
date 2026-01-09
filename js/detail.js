@@ -22,6 +22,32 @@ document.getElementById("drivetrain").innerText = car.drivetrain;
 document.getElementById("origin").innerText = car.origin;
 document.getElementById("description").innerText = car.description;
 
+/* GIỎ HÀNG */
+function addToCart() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  if (!cart.includes(car.id)) {
+    cart.push(car.id);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("✅ Đã thêm vào giỏ hàng");
+  }
+}
+
+/* ĐẶT XE */
 function orderCar() {
-  alert("🚗 Đặt xe thành công! Showroom sẽ liên hệ bạn.");
+  const name = prompt("Tên của bạn:");
+  const phone = prompt("SĐT:");
+
+  if (!name || !phone) {
+    alert("❌ Vui lòng nhập đủ thông tin");
+    return;
+  }
+
+  alert(`🚗 Đặt xe thành công!
+Xe: ${car.name}
+Khách: ${name}
+SĐT: ${phone}`);
+}
+
+function goBack() {
+  window.history.back();
 }
