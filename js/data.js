@@ -77,55 +77,47 @@ const cars = [
 ];
 
 const container = document.getElementById("car-list");
-if (!container) return;
+if (!container) {
 
-const searchInput = document.getElementById("search");
-const typeFilter = document.getElementById("typeFilter");
+  const searchInput = document.getElementById("search");
+  const typeFilter = document.getElementById("typeFilter");
+  
+  function renderCars(list) {
+    container.innerHTML = "";
+  
+    list.forEach(car => {
+      const div = document.createElement("div");
+      div.className = "car-card";
+      div.onclick = () => {
+        window.location.href = `detail.html?id=${car.id}`;
+      };
+  
+      div.innerHTML = `
+        ${car.tag ? `<span class="tag ${car.tag.toLowerCase()}">${car.tag}</span>` : ""}
+        <img src="${car.image}" alt="${car.name}">
+        <h3>${car.name}</h3>
+        <p>Hãng: ${car.brand}</p>
+        <p class="price">${car.price.toLocaleString()} VND</p>
+      `;
+  
+      container.appendChild(div);
+    });
+  }
+  
+  function filterCars() {
+    const keyword = searchInput.value.toLowerCase();
+    const type = typeFilter.value;
+  
+    const filtered = cars.filter(car =>
+      car.name.toLowerCase().includes(keyword) &&
+      (type === "" || car.type === type)
+    );
+  
+    renderCars(filtered);
+  }
+  renderCars(cars);
 
-/* ======================
-   RENDER XE
-====================== */
-function renderCars(list) {
-  container.innerHTML = "";
-
-  list.forEach(car => {
-    const div = document.createElement("div");
-    div.className = "car-card";
-    div.onclick = () => {
-      window.location.href = `detail.html?id=${car.id}`;
-    };
-
-    div.innerHTML = `
-      ${car.tag ? `<span class="tag ${car.tag.toLowerCase()}">${car.tag}</span>` : ""}
-      <img src="${car.image}" alt="${car.name}">
-      <h3>${car.name}</h3>
-      <p>Hãng: ${car.brand}</p>
-      <p class="price">${car.price.toLocaleString()} VND</p>
-    `;
-
-    container.appendChild(div);
-  });
-}
-
-/* ======================
-   SEARCH + FILTER
-====================== */
-function filterCars() {
-  const keyword = searchInput.value.toLowerCase();
-  const type = typeFilter.value;
-
-  const filtered = cars.filter(car =>
-    car.name.toLowerCase().includes(keyword) &&
-    (type === "" || car.type === type)
-  );
-
-  renderCars(filtered);
-}
-
-searchInput.addEventListener("input", filterCars);
-typeFilter.addEventListener("change", filterCars);
-
-/* ======================
-   LOAD BAN ĐẦU
-====================== */
-renderCars(cars);
+  searchInput.addEventListener("input", filterCars);
+  typeFilter.addEventListener("change", filterCars);
+  
+  renderCars(cars);
