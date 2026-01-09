@@ -119,5 +119,5 @@ if (!container) {
 
   searchInput.addEventListener("input", filterCars);
   typeFilter.addEventListener("change", filterCars);
-  
+}
   renderCars(cars);
