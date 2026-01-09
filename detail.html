@@ -22,22 +22,30 @@
     <div class="detail-info">
       <h2 id="car-name"></h2>
       <p id="car-brand"></p>
-      <p id="car-type"></p>
       <p id="car-price" class="price"></p>
 
-      <h3>📊 Thông số kỹ thuật</h3>
-      <ul class="specs">
-        <li><strong>Động cơ:</strong> <span id="engine"></span></li>
-        <li><strong>Công suất:</strong> <span id="power"></span></li>
-        <li><strong>Tăng tốc:</strong> <span id="acceleration"></span></li>
-        <li><strong>Tốc độ tối đa:</strong> <span id="topSpeed"></span></li>
-        <li><strong>Dẫn động:</strong> <span id="drivetrain"></span></li>
-        <li><strong>Năm sản xuất:</strong> <span id="year"></span></li>
-        <li><strong>Xuất xứ:</strong> <span id="origin"></span></li>
-      </ul>
+      <!-- TAB -->
+      <div class="tabs">
+        <button class="tab-btn active" onclick="showTab('specs')">Thông số</button>
+        <button class="tab-btn" onclick="showTab('desc')">Mô tả</button>
+      </div>
 
-      <h3>📝 Mô tả</h3>
-      <p id="description"></p>
+      <!-- TAB CONTENT -->
+      <div id="specs" class="tab-content active">
+        <table class="spec-table">
+          <tr><td>Động cơ</td><td id="spec-engine"></td></tr>
+          <tr><td>Công suất</td><td id="spec-power"></td></tr>
+          <tr><td>Tăng tốc</td><td id="spec-acc"></td></tr>
+          <tr><td>Tốc độ tối đa</td><td id="spec-speed"></td></tr>
+          <tr><td>Dẫn động</td><td id="spec-drive"></td></tr>
+          <tr><td>Năm sản xuất</td><td id="spec-year"></td></tr>
+          <tr><td>Xuất xứ</td><td id="spec-origin"></td></tr>
+        </table>
+      </div>
+
+      <div id="desc" class="tab-content">
+        <p id="car-description"></p>
+      </div>
 
       <div class="actions">
         <button class="btn primary">📞 Liên hệ mua</button>
