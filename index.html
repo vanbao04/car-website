@@ -2,33 +2,48 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Car Shop</title>
+  <title>Luxury Car Showroom</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header class="navbar">
-  <h1>Car Shop</h1>
+  <h1>🚗 Luxury Car Showroom</h1>
   <nav>
     <a href="index.html">Trang chủ</a>
-    <a href="#">Xe mới</a>
-    <a href="#">Liên hệ</a>
+    <a href="#cars">Xe mới</a>
+    <a href="#contact">Liên hệ</a>
   </nav>
 </header>
 
 <section class="filter">
-  <input id="search" placeholder="Tìm theo tên xe">
+  <input type="text" id="search" placeholder="Tìm theo tên xe...">
+
+  <select id="brandFilter">
+    <option value="">Tất cả hãng</option>
+    <option value="Lamborghini">Lamborghini</option>
+    <option value="Ferrari">Ferrari</option>
+    <option value="Bugatti">Bugatti</option>
+    <option value="Koenigsegg">Koenigsegg</option>
+    <option value="KIA">KIA</option>
+  </select>
+
+  <select id="yearFilter">
+    <option value="">Tất cả năm</option>
+    <option value="2023">2023</option>
+    <option value="2022">2022</option>
+  </select>
 </section>
 
-<main>
+<main id="cars">
   <div id="car-list" class="car-grid"></div>
 </main>
 
-<footer class="footer">
-  © 2026 Car Shop | Bao Han Van
+<footer id="contact" class="footer">
+  <p>📞 Hotline: 0909 999 999 | 📧 showroom@car.com</p>
+  <p>© 2026 Luxury Car Showroom</p>
 </footer>
 
-<script src="js/cars.js"></script>
-<script src="js/index.js"></script>
+<script src="js/data.js"></script>
 </body>
 </html>
