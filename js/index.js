@@ -1,4 +1,3 @@
-
 const container = document.getElementById("car-list");
 const searchInput = document.getElementById("search");
 const typeFilter = document.getElementById("typeFilter");
