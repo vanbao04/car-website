@@ -20,7 +20,7 @@ const cars = [
     brand: "Ferrari",
     year: 2022,
     price: 32000000000,
-    image: "images/ferrari.jpg",
+    image: "images/ferrari1.jpg",
     engine: "V12 Hybrid",
     power: "963 HP",
     acceleration: "2.6s",
