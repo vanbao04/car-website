@@ -1,37 +1,30 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Car Showroom</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <title>Car Shop</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
 <header class="navbar">
-  <h1>Luxury Car Showroom</h1>
+  <h1>Car Shop</h1>
   <nav>
     <a href="index.html">Trang chủ</a>
-    <a href="#new">Xe mới</a>
-    <a href="#contact">Liên hệ</a>
+    <a href="#">Xe mới</a>
+    <a href="#">Liên hệ</a>
   </nav>
 </header>
 
-<section class="filters">
-  <input id="searchName" placeholder="Tìm theo tên xe...">
-  
-  <select id="filterBrand">
-    <option value="">Hãng xe</option>
-    <option>Lamborghini</option>
-    <option>Ferrari</option>
-    <option>Bugatti</option>
-    <option>Koenigsegg</option>
-    <option>KIA</option>
-  </select>
+<section class="filter">
+  <input type="text" id="search" placeholder="Tìm theo tên xe..." />
 
-  <select id="filterYear">
-    <option value="">Năm sản xuất</option>
-    <option>2023</option>
-    <option>2022</option>
+  <select id="typeFilter">
+    <option value="">Tất cả loại xe</option>
+    <option value="Supercar">Supercar</option>
+    <option value="Hypercar">Hypercar</option>
+    <option value="Megacar">Megacar</option>
+    <option value="Hatchback">Hatchback</option>
   </select>
 </section>
 
@@ -39,12 +32,10 @@
   <div id="car-list" class="car-grid"></div>
 </main>
 
-<footer id="contact">
-  <p>© 2026 | Intern Project – Van Bao </p>
+<footer class="footer">
+  <p>© 2026 Car Shop | Intern Project by Bao Han Van</p>
 </footer>
 
 <script src="js/data.js"></script>
-<script src="js/detail.js"></script>
-
 </body>
 </html>
