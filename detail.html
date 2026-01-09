@@ -1,45 +1,37 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Chi tiết xe</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header class="navbar">
-  <h1> Car Showroom</h1>
+  <a href="index.html">← Quay lại</a>
 </header>
 
-<main class="detail-container">
-  <div class="detail-card">
+<main class="detail">
+  <img id="car-image">
+  <h1 id="car-name"></h1>
+  <p id="car-brand"></p>
+  <p id="car-price"></p>
 
-    <span id="car-tag" class="tag"></span>
-    <img id="car-image" />
+  <h2>Thông số kỹ thuật</h2>
+  <ul>
+    <li>Động cơ: <span id="engine"></span></li>
+    <li>Công suất: <span id="power"></span></li>
+    <li>0–100 km/h: <span id="acceleration"></span></li>
+    <li>Tốc độ tối đa: <span id="topSpeed"></span></li>
+    <li>Dẫn động: <span id="drivetrain"></span></li>
+    <li>Năm SX: <span id="year"></span></li>
+    <li>Xuất xứ: <span id="origin"></span></li>
+  </ul>
 
-    <h2 id="car-name"></h2>
-    <p id="car-brand"></p>
-    <p id="car-type"></p>
-    <p id="car-price" class="price"></p>
-
-    <h3>Thông số kỹ thuật</h3>
-    <ul class="specs">
-      <li>Động cơ: <span id="engine"></span></li>
-      <li>Công suất: <span id="power"></span></li>
-      <li>Tăng tốc: <span id="acceleration"></span></li>
-      <li>Tốc độ tối đa: <span id="topSpeed"></span></li>
-      <li>Dẫn động: <span id="drivetrain"></span></li>
-      <li>Năm SX: <span id="year"></span></li>
-      <li>Xuất xứ: <span id="origin"></span></li>
-    </ul>
-
-    <p id="description"></p>
-
-    <button onclick="goBack()">← Quay lại</button>
-  </div>
+  <p id="description"></p>
 </main>
 
-<script src="js/data.js"></script>
+<script src="js/cars.js"></script>
 <script src="js/detail.js"></script>
 </body>
 </html>
