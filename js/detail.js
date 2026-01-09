@@ -1,7 +1,7 @@
 const params = new URLSearchParams(window.location.search);
 const id = Number(params.get("id"));
-
 const car = cars.find(c => c.id === id);
+const tagEl = document.getElementById("car-tag");
 
 if (!car) {
   alert("Không tìm thấy xe!");
@@ -22,14 +22,25 @@ document.getElementById("topSpeed").innerText = car.topSpeed || "Đang cập nh�
 document.getElementById("drivetrain").innerText = car.drivetrain || "Đang cập nhật";
 document.getElementById("year").innerText = car.year || "Đang cập nhật";
 document.getElementById("origin").innerText = car.origin || "Đang cập nhật";
-document.getElementById("description").innerText =
-  car.description || "Thông tin chi tiết sẽ được cập nhật sau.";
+document.getElementById("description").innerText = car.description || "Thông tin chi tiết sẽ được cập nhật sau.";
 
-const tagEl = document.getElementById("car-tag");
 if (car.tag) {
   tagEl.innerText = car.tag;
   tagEl.style.display = "inline-block";
   tagEl.style.background = car.tag === "HOT" ? "#dc2626" : "#16a34a";
+}
+
+function showTab(tab) {
+  document.querySelectorAll(".tab-btn").forEach(btn =>
+    btn.classList.remove("active")
+  );
+  document.querySelectorAll(".tab-content").forEach(c =>
+    c.classList.remove("active")
+  );
+
+  document.querySelector(`button[onclick="showTab('${tab}')"]`)
+    .classList.add("active");
+  document.getElementById(tab).classList.add("active");
 }
 
 function goBack() {
