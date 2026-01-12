@@ -1,31 +1,12 @@
-const modal = document.getElementById("paymentModal");
+const cartDiv = document.getElementById("cart");
+const cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
-function orderAll() {
-  if (cartIds.length === 0) {
-    alert("Giỏ hàng trống!");
-    return;
-  }
-  modal.style.display = "flex";
-}
+cart.forEach(c => {
+  cartDiv.innerHTML += `<p>${c.name} - ${c.price.toLocaleString()} VND</p>`;
+});
 
-function closePayment() {
-  modal.style.display = "none";
-}
-
-function confirmPayment() {
-  const name = document.getElementById("buyerName").value;
-  const phone = document.getElementById("buyerPhone").value;
-
-  if (!name || !phone) {
-    alert("Vui lòng nhập đầy đủ thông tin!");
-    return;
-  }
-
-  alert(`✅ THANH TOÁN THÀNH CÔNG
-Khách hàng: ${name}
-SĐT: ${phone}
-Xe đã đặt: ${cartIds.length}`);
-
+function checkout() {
+  alert("Thanh toán giả lập thành công!");
   localStorage.removeItem("cart");
-  location.reload();
+  location.href = "index.html";
 }
