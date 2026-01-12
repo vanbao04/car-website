@@ -1,8 +1,4 @@
-// index.js
-if (!document.getElementById("car-list")) {
-  // không phải trang index → thoát
-  console.log("index.js skipped");
-} else {
+document.addEventListener("DOMContentLoaded", () => {
 
   const container = document.getElementById("car-list");
   const search = document.getElementById("search");
@@ -32,13 +28,13 @@ if (!document.getElementById("car-list")) {
     const b = brandFilter.value;
     const y = yearFilter.value;
 
-    const filtered = cars.filter(c =>
-      c.name.toLowerCase().includes(k) &&
-      (b === "" || c.brand === b) &&
-      (y === "" || c.year == y)
+    renderCars(
+      cars.filter(c =>
+        c.name.toLowerCase().includes(k) &&
+        (b === "" || c.brand === b) &&
+        (y === "" || c.year == y)
+      )
     );
-
-    renderCars(filtered);
   }
 
   search.addEventListener("input", filterCars);
@@ -46,4 +42,4 @@ if (!document.getElementById("car-list")) {
   yearFilter.addEventListener("change", filterCars);
 
   renderCars(cars);
-}
+});
