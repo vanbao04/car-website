@@ -2,41 +2,19 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Liên hệ | Luxury Car Showroom</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Liên hệ</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header>
-  <h1>📍 Liên hệ showroom</h1>
-  <nav>
-    <a href="index.html">Trang chủ</a>
-    <a href="cart.html">Giỏ hàng</a>
-  </nav>
+<header class="navbar">
+  <h1>Liên hệ showroom</h1>
 </header>
 
-<section class="contact">
-  <div class="contact-box">
-    <h2>Luxury Car Showroom</h2>
-    <p>🏢 Phố Xanh, Phường Tam Sơn, Tỉnh Bắc Ninh</p>
-    <p>📞 0909 999 888</p>
-    <p>✉️ showroom@luxurycar.vn</p>
-
-    <form onsubmit="sendContact(event)">
-      <input placeholder="Tên của bạn" required>
-      <input placeholder="Email" required>
-      <textarea placeholder="Nội dung liên hệ"></textarea>
-      <button>Gửi liên hệ</button>
-    </form>
-  </div>
-</section>
-
-<script>
-function sendContact(e){
-  e.preventDefault();
-  alert("📨 Liên hệ đã được gửi! Showroom sẽ phản hồi sớm.");
-}
-</script>
+<main style="padding:40px">
+  <p>Email: showroom@luxurycar.vn</p>
+  <p>Hotline: 0909 999 999</p>
+</main>
 
 </body>
 </html>
