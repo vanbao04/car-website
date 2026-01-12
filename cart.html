@@ -1,16 +1,20 @@
-<div id="paymentModal" class="modal">
-  <div class="modal-box">
-    <h2>💳 Thanh toán</h2>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Giỏ hàng</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-    <input id="buyerName" placeholder="Họ tên">
-    <input id="buyerPhone" placeholder="Số điện thoại">
-    <select id="paymentMethod">
-      <option>Chuyển khoản ngân hàng</option>
-      <option>Tiền mặt tại showroom</option>
-      <option>Trả góp</option>
-    </select>
+<header class="navbar">
+  <h1>Giỏ hàng</h1>
+  <nav><a href="index.html">Trang chủ</a></nav>
+</header>
 
-    <button onclick="confirmPayment()">Xác nhận thanh toán</button>
-    <button class="cancel" onclick="closePayment()">Hủy</button>
-  </div>
-</div>
+<main id="cart"></main>
+<button onclick="checkout()">💳 Thanh toán</button>
+
+<script src="js/cart.js"></script>
+</body>
+</html>
