@@ -1,16 +1,24 @@
-function orderCar() {
-  const name = prompt("Nhập họ tên:");
-  const phone = prompt("Nhập số điện thoại:");
+function openOrder() {
+  document.getElementById("orderModal").style.display = "block";
+}
 
-  if (!name || !phone) {
-    alert("Vui lòng nhập đầy đủ thông tin");
-    return;
-  }
+function closeOrder() {
+  document.getElementById("orderModal").style.display = "none";
+}
+
+document.getElementById("orderForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("customerName").value;
+  const phone = document.getElementById("customerPhone").value;
 
   alert(
-    "Đặt xe thành công!\n" +
+    "🎉 Đặt xe thành công!\n\n" +
     "Khách hàng: " + name + "\n" +
-    "SĐT: " + phone + "\n" +
-    "Showroom sẽ liên hệ sớm."
+    "SĐT: " + phone + "\n\n" +
+    "Showroom sẽ liên hệ xác nhận."
   );
-}
+
+  closeOrder();
+  this.reset();
+});
