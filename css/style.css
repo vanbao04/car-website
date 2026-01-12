@@ -177,6 +177,32 @@ body {
   animation: fadeUp 0.4s ease;
 }
 
+.contact-footer {
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 60px;
+}
+
+.contact-footer h2 {
+  margin-bottom: 15px;
+}
+
+.contact-footer p {
+  margin: 6px 0;
+  opacity: 0.9;
+}
+
+.contact-icons {
+  font-size: 26px;
+  margin: 15px 0;
+}
+
+.contact-footer strong {
+  color: #facc15;
+}
+
 @keyframes fadeUp {
   from {
     opacity: 0;
