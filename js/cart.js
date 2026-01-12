@@ -6,7 +6,7 @@ cart.forEach(c => {
 });
 
 function checkout() {
-  alert("Thanh toán giả lập thành công!");
+  alert("Thanh toán thành công!");
   localStorage.removeItem("cart");
   location.href = "index.html";
 }
