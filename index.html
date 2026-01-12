@@ -7,54 +7,60 @@
 </head>
 <body>
 
-<header class="navbar">
-  <h1>💎──────── SHOWROOM XE CAO CẤP ────────💎</h1>
-  <h1>  🏁 TỐC ĐỘ • SANG TRỌNG • ĐẲNG CẤP 🏁</h1>
-  <nav>
-    <a href="index.html">Trang chủ</a>
-    <a href="cart.html">Giỏ hàng🛒</a>
-    <a href="contact.html">Liên hệ☎️</a>
-  </nav>
-</header>
-  
-<section class="search-bar">
-  <input type="text" id="search" placeholder="🔍 Tìm theo tên xe...">
+  <!-- HEADER / NAVBAR -->
+  <header class="navbar">
+    <h1>💎──────── SHOWROOM XE CAO CẤP ────────💎</h1>
+    <h2>🏁 TỐC ĐỘ • SANG TRỌNG • ĐẲNG CẤP 🏁</h2>
+    <nav>
+      <a href="index.html">Trang chủ</a>
+      <a href="cart.html">Giỏ hàng🛒</a>
+      <a href="contact.html">Liên hệ☎️</a>
+    </nav>
+  </header>
 
-  <select id="brandFilter">
-    <option value="">Tất cả hãng</option>
-    <option value="Lamborghini">Lamborghini</option>
-    <option value="Ferrari">Ferrari</option>
-    <option value="Bugatti">Bugatti</option>
-    <option value="Koenigsegg">Koenigsegg</option>
-    <option value="KIA">KIA</option>
-  </select>
+  <!-- SEARCH / FILTER -->
+  <section class="search-bar">
+    <input type="text" id="search" placeholder="🔍 Tìm theo tên xe...">
 
-  <select id="yearFilter">
-    <option value="">Năm sản xuất</option>
-    <option value="2023">2023</option>
-    <option value="2022">2022</option>
-  </select>
-</section>
+    <select id="brandFilter">
+      <option value="">Tất cả hãng</option>
+      <option value="Lamborghini">Lamborghini</option>
+      <option value="Ferrari">Ferrari</option>
+      <option value="Bugatti">Bugatti</option>
+      <option value="Koenigsegg">Koenigsegg</option>
+      <option value="KIA">KIA</option>
+    </select>
 
-<footer class="contact-footer">
-  <h2>📞 Liên hệ Showroom</h2>
+    <select id="yearFilter">
+      <option value="">Năm sản xuất</option>
+      <option value="2023">2023</option>
+      <option value="2022">2022</option>
+    </select>
+  </section>
 
-  <p>🏢 Địa chỉ: Phố Xanh, Phường Tam Sơn, Tỉnh Bắc Ninh</p>
-  <p>📱 Hotline: <strong>0909 888 999</strong></p>
-  <p>✉️ Email: showroom@carshop.vn</p>
+  <!-- CAR LIST -->
+  <main id="car-list"></main>
 
-  <div class="contact-icons">
-    📞 🚗 💼 🏁
-  </div>
+  <!-- FOOTER / CONTACT -->
+  <footer class="contact-footer">
+    <h2>📞 Liên hệ Showroom</h2>
 
-  <p class="copyright">
-    © 2026 Car Dream Shop – Intern Project by Bao Han Van
-  </p>
-</footer>
+    <p>🏢 Địa chỉ: Phố Xanh, Phường Tam Sơn, Tỉnh Bắc Ninh</p>
+    <p>📱 Hotline: <strong>0909 888 999</strong></p>
+    <p>✉️ Email: showroom@carshop.vn</p>
 
-<main id="car-list"></main>
+    <div class="contact-icons">
+      📞 🚗 💼 🏁
+    </div>
 
-<script src="js/cars.js"></script>
-<script src="js/index.js"></script>
+    <p class="copyright">
+      © 2026 Car Dream Shop – Intern Project by Bao Han Van
+    </p>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script src="js/cars.js"></script>
+  <script src="js/index.js"></script>
+
 </body>
 </html>
