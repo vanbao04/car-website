@@ -159,3 +159,23 @@ body {
 .cancel {
   background: #475569;
 }
+
+.contact {
+  max-width: 600px;
+  margin: 60px auto;
+}
+
+.contact-box {
+  background: #020617;
+  padding: 30px;
+  border-radius: 16px;
+}
+
+.contact-box input,
+.contact-box textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
