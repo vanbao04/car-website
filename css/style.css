@@ -252,3 +252,17 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.badge.hot { background: linear-gradient(45deg, #ff512f, #dd2476); }
+.badge.new { background: linear-gradient(45deg, #00c6ff, #0072ff); }
+.badge.luxury { background: linear-gradient(45deg, gold, orange); }
+.badge.premium { background: linear-gradient(45deg, #434343, #000); }
