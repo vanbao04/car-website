@@ -247,10 +247,27 @@ body {
   opacity: 0.9;
 }
 
-@media (max-width: 900px) {
-  .detail-container {
-    grid-template-columns: 1fr;
-  }
+.search-bar {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  padding: 20px;
+  background: #f8fafc;
+}
+
+.search-bar input,
+.search-bar select {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  min-width: 200px;
+}
+
+.search-bar input:focus,
+.search-bar select:focus {
+  outline: none;
+  border-color: #111;
 }
 
 .badge {
@@ -266,3 +283,10 @@ body {
 .badge.new { background: linear-gradient(45deg, #00c6ff, #0072ff); }
 .badge.luxury { background: linear-gradient(45deg, gold, orange); }
 .badge.premium { background: linear-gradient(45deg, #434343, #000); }
+
+@media (max-width: 900px) {
+  .detail-container {
+    grid-template-columns: 1fr;
+  }
+}
+
