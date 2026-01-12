@@ -2,31 +2,21 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Car Showroom</title>
+  <title>Luxury Car Showroom</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="favicon.ico">
 </head>
 <body>
 
-<header>
-  <h1> Luxury Car Showroom</h1>
-  <input id="search" placeholder="Tìm tên xe">
-  <select id="brandFilter">
-    <option value="">Tất cả hãng</option>
-    <option>Lamborghini</option>
-    <option>Ferrari</option>
-    <option>Bugatti</option>
-    <option>Koenigsegg</option>
-    <option>KIA</option>
-  </select>
-  <select id="yearFilter">
-    <option value="">Tất cả năm</option>
-    <option>2022</option>
-    <option>2023</option>
-  </select>
+<header class="navbar">
+  <h1>Luxury Car Showroom</h1>
+  <nav>
+    <a href="index.html">Trang chủ</a>
+    <a href="cart.html">Giỏ hàng</a>
+    <a href="contact.html">Liên hệ</a>
+  </nav>
 </header>
 
-<main id="car-list" class="grid"></main>
+<main id="car-list"></main>
 
 <script src="js/cars.js"></script>
 <script src="js/index.js"></script>
