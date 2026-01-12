@@ -1,21 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  // Lấy ID từ URL
   const params = new URLSearchParams(window.location.search);
-  const id = Number(params.get("id"));
+  const carId = parseInt(params.get("id"));
 
-  if (!window.cars) {
-    alert("Không load được dữ liệu xe (cars.js)");
-    return;
-  }
-
-  const car = cars.find(c => c.id === id);
+  // Tìm xe
+  const car = cars.find(c => c.id === carId);
 
   if (!car) {
-    alert("Không tìm thấy xe");
-    window.location.href = "index.html";
+    alert("Không tìm thấy xe!");
     return;
   }
 
-  // ===== GÁN DỮ LIỆU (100% KHỚP ID HTML) =====
+  // Gán dữ liệu
   document.getElementById("car-image").src = car.image;
   document.getElementById("car-name").innerText = car.name;
   document.getElementById("car-brand").innerText = "Hãng: " + car.brand;
@@ -30,16 +27,19 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("drivetrain").innerText = car.drivetrain;
   document.getElementById("origin").innerText = car.origin;
   document.getElementById("description").innerText = car.description;
+
 });
 
-function goBack() {
-  history.back();
-}
+/* ====== CÁC HÀM BUTTON ====== */
 
 function addToCart() {
-  alert("🛒 Xe đã được thêm vào giỏ hàng (giả lập)");
+  alert("🛒 Đã thêm xe vào giỏ hàng (giả lập)");
 }
 
 function orderCar() {
-  alert("📋 Đặt xe thành công!\nNhân viên showroom sẽ liên hệ với bạn.");
+  alert("📋 Đặt xe thành công! Nhân viên sẽ liên hệ bạn.");
+}
+
+function goBack() {
+  window.history.back();
 }
