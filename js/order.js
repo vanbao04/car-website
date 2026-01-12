@@ -14,8 +14,8 @@ document.getElementById("orderForm").addEventListener("submit", function (e) {
 
   alert(
     "🎉 Đặt xe thành công!\n\n" +
-    "Khách hàng: " + name + "\n" +
-    "SĐT: " + phone + "\n\n" +
+    "👥Khách hàng: " + name + "\n" +
+    "📱SĐT: " + phone + "\n\n" +
     "Showroom sẽ liên hệ xác nhận."
   );
 
