@@ -2,50 +2,33 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Luxury Car Showroom</title>
+  <title>Car Showroom</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico">
 </head>
 <body>
 
-<header class="navbar">
-  <h1>Luxury Car Showroom</h1>
-  <nav>
-    <a href="index.html">Trang chủ</a>
-    <a href="#cars">Xe mới</a>
-    <a href="#contact">Liên hệ</a>
-  </nav>
-</header>
-
-<section class="filter">
-  <input type="text" id="search" placeholder="Tìm theo tên xe...">
-
+<header>
+  <h1> Luxury Car Showroom</h1>
+  <input id="search" placeholder="Tìm tên xe">
   <select id="brandFilter">
     <option value="">Tất cả hãng</option>
-    <option value="Lamborghini">Lamborghini</option>
-    <option value="Ferrari">Ferrari</option>
-    <option value="Bugatti">Bugatti</option>
-    <option value="Koenigsegg">Koenigsegg</option>
-    <option value="KIA">KIA</option>
+    <option>Lamborghini</option>
+    <option>Ferrari</option>
+    <option>Bugatti</option>
+    <option>Koenigsegg</option>
+    <option>KIA</option>
   </select>
-
   <select id="yearFilter">
     <option value="">Tất cả năm</option>
-    <option value="2023">2023</option>
-    <option value="2022">2022</option>
+    <option>2022</option>
+    <option>2023</option>
   </select>
-</section>
+</header>
 
-<main id="cars">
-  <div id="car-list" class="car-grid"></div>
-</main>
-
-<footer id="contact" class="footer">
-  <p>📞 Hotline: 0909 999 999 | 📧 showroom@car.com</p>
-  <p>© 2026 Luxury Car Showroom</p>
-</footer>
+<main id="car-list" class="grid"></main>
 
 <script src="js/cars.js"></script>
 <script src="js/index.js"></script>
-
 </body>
 </html>
