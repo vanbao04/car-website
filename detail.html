@@ -9,15 +9,12 @@
 
 <header class="navbar">
   <h1>Chi tiết xe</h1>
-  <nav>
-    <a href="index.html">← Quay về</a>
-  </nav>
+  <nav><a href="index.html">← Quay về</a></nav>
 </header>
 
 <main class="detail-container">
-
   <div class="detail-image">
-    <img id="car-image" src="" alt="">
+    <img id="car-image">
   </div>
 
   <div class="detail-info">
@@ -26,7 +23,6 @@
     <p id="car-year"></p>
     <p class="price" id="car-price"></p>
 
-    <h3>Thông số kỹ thuật</h3>
     <ul class="specs">
       <li>Động cơ: <span id="engine"></span></li>
       <li>Công suất: <span id="power"></span></li>
@@ -36,17 +32,13 @@
       <li>Xuất xứ: <span id="origin"></span></li>
     </ul>
 
-    <h3>Mô tả</h3>
     <p id="description"></p>
 
     <button onclick="addToCart()">🛒 Thêm giỏ hàng</button>
     <button onclick="orderCar()">📋 Đặt xe</button>
-    <button onclick="goBack()">← Quay lại</button>
-
   </div>
-
 </main>
-  
+
 <script src="js/cars.js"></script>
 <script src="js/detail.js"></script>
 </body>
